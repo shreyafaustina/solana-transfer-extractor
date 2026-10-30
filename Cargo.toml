@@ -1,0 +1,20 @@
+[package]
+name = "solana_transfer_extractor"
+version = "0.0.1"
+edition = "2021"
+
+[lib]
+name = "substreams"
+crate-type = ["cdylib"]
+
+[dependencies]
+bs58 = "0.5.1"
+buffa = "0.9.2"
+buffa-types = "0.9.2"
+substreams = "0.8.0"
+substreams-solana = "0.16.0"
+
+[profile.release]
+lto = true
+opt-level = 's'
+strip = "debuginfo"
